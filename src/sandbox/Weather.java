@@ -19,6 +19,8 @@ public class Weather {
     /**
      * @param args the command line arguments
      */
+    public int temp;
+    
     public static void main(String[] args) throws Exception {
         String[] weatherCodeString = {"tornado","tropical storm","hurricane","severe thunderstorms","thunderstorms","mixed rain and snow","mixed rain and sleet"
                 ,"mixed snow and sleet","freezing drizzle","drizzle","freezing rain","showers","showers","snow flurries","light snow showers","blowing snow","snow","hail","sleet"
@@ -131,5 +133,9 @@ public class Weather {
     
        
         }
+    public int getTemp()
+    {
+    return temp;
+    }
 
     }

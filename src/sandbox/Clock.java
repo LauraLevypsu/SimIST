@@ -61,4 +61,9 @@ public class Clock{
     public String timeDateDisplay(ISTTime time){
         return time.showTime() + "    " + time.showDate();
     }
+    
+    public int getHour()
+    {
+        return hours;
+    }
 }

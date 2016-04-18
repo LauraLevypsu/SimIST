@@ -20,18 +20,19 @@ public class Temperature {
    
     double temperature; // the game temp
     int timeOfDay; //in game time
-    
+    Clock clock;
     double tempIncrement = 2; //the max positive temperature change in 1 hour
     double tempDecrement = -3;
     double tempChange; //hold the chnage hour to hour.
 
-    public Temperature(int time, String outsideTemp)
+    public Temperature(Clock clock)
     {
+     Weather weather = new Weather();
+     this.clock = clock;
      
-     //this.time = timeOfDay; **this will parse the string from the clock class to get the in game time.
-    
-     //this.outsideTemp = outsideTemp; **there will be a line to parse the string from the weather class.
-     this.getTemp();
+     this.timeOfDay = clock.getHour();
+     this.outsideTemp = weather.getTemp();
+     
     }
       
     private double getTemp() //randomized the temp in game 
