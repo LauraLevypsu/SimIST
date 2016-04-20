@@ -60,7 +60,7 @@ public class Inventory extends JFrame implements ComponentListener{
 
                 super.paintComponent(g);
                 getParent().getParent().requestFocus();
-                g.drawImage(new ImageIcon("inventory.png").getImage(), 0, 0, (int) Math.round(this.getWidth()), (int) Math.round(container.getHeight()), null);
+                g.drawImage(new ImageIcon("src/pic/inventory.png").getImage(), 0, 0, (int) Math.round(this.getWidth()), (int) Math.round(container.getHeight()), null);
             }
         };
 
@@ -70,7 +70,7 @@ public class Inventory extends JFrame implements ComponentListener{
 
                 super.paintComponent(g);
                 getParent().getParent().requestFocus();
-                g.drawImage(new ImageIcon("sidebar.png").getImage(), 0, 0, (int) Math.round(this.getWidth()), (int) Math.round(container.getHeight()), null);
+                g.drawImage(new ImageIcon("src/pic/sidebar.png").getImage(), 0, 0, (int) Math.round(this.getWidth()), (int) Math.round(container.getHeight()), null);
 
             }
         };

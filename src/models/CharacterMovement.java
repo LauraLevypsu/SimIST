@@ -7,7 +7,7 @@ package models;
 import java.awt.*;
 public class CharacterMovement  {
 
-    private String animation = "left1.png";
+    private String animation = "src/pic/left1.png";
     private String facing = "";
     private boolean isInteracting = false;
     private int frame = 0;

@@ -215,7 +215,7 @@ public class Room206 extends JPanel {
 
         super.paintComponent(g);
 
-        g.drawImage(new ImageIcon("room206.png").getImage(), 0, 0, null);
+        g.drawImage(new ImageIcon("src/pic/room206.png").getImage(), 0, 0, null);
         g.drawImage(new ImageIcon(characterMovement.getAnimation()).getImage(), student.x, student.y, null);
 
     }

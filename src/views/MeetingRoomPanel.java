@@ -84,7 +84,7 @@ public class MeetingRoomPanel extends JPanel {
 
         super.paintComponent(g);
 
-        g.drawImage(new ImageIcon("meetingRoom.png").getImage(), 0, 0, null);
+        g.drawImage(new ImageIcon("src/pic/meetingRoom.png").getImage(), 0, 0, null);
         g.drawImage(new ImageIcon(characterMovement.getAnimation()).getImage(), student.x, student.y, null);
 
     }

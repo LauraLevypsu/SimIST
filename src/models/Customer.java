@@ -17,7 +17,8 @@ public class Customer extends Rectangle{
     
     public Customer(Dimension inf_FrameSize)
     {
-        animation = new String [] {"right1.png" , "right2.png" , "left1.png" , "left2.png" , "up1.png" , "up2.png" , "down1.png" , "down2.png"};
+        animation = new String [] {"src/pic/right1.png" , "src/pic/right2.png" , "src/pic/left1.png" , 
+            "src/pic/left2.png" , "src/pic/up1.png" , "src/pic/up2.png" , "src/pic/down1.png" , "src/pic/down2.png"};
         double tempHeight = inf_FrameSize.height * .125;
         double tempWidth = inf_FrameSize.width * .05;
         double tempX = inf_FrameSize.width * .875;

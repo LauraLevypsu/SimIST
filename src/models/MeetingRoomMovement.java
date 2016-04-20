@@ -19,7 +19,7 @@ import java.awt.event.KeyListener;
 public class MeetingRoomMovement implements KeyListener{
     private Customer student;
     private int frame = 0;
-    private String animation = "left1.png";
+    private String animation = "src/pic/left1.png";
     private String facing = "";
     private int stationFound;
     private ArrayList<Rectangle> stations = new ArrayList<>();
