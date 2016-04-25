@@ -31,7 +31,10 @@ public class Temperature {
      this.clock = clock;
      
      this.timeOfDay = clock.getHour();
+     try{
      this.outsideTemp = weather.getTemp();
+     }
+     catch (Exception e) {};
      
     }
       
