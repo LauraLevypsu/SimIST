@@ -133,8 +133,15 @@ public class Weather {
     
        
         }
-    public int getTemp()
+    public int getTemp() throws Exception
     {
+        URL weather = new URL("https://query.yahooapis.com/v1/public/yql?q=select%20item.condition%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22statecollege%2C%20pa%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys");
+        URLConnection yc = weather.openConnection();
+        BufferedReader in = new BufferedReader(new InputStreamReader(
+                                    yc.getInputStream()));
+        String inputLine=in.readLine();
+        int weatherCode = Integer.parseInt(inputLine.substring(119,121));    
+        int temp = Integer.parseInt(inputLine.substring(170,172));
     return temp;
     }
 

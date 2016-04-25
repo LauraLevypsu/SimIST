@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.KeyListener;
 import java.util.*;
+import sandbox.Weather;
 
 
 public class AuBonPainPanel extends JPanel {
@@ -41,8 +42,10 @@ public class AuBonPainPanel extends JPanel {
     private Rectangle exitCompSci;
     private CharacterMovement characterMovement;
     private Customer student;
+    private Weather weather = new Weather();
 
     private JLabel temp = new JLabel();
+    private JLabel climate  = new JLabel();
 
     public AuBonPainPanel(Customer inf_Student, CharacterMovement inf_characterMovement) {
         super();
@@ -52,7 +55,11 @@ public class AuBonPainPanel extends JPanel {
         setPreferredSize(new Dimension(800, 600));
         setLayout(null);
         add(temp);
+        add(climate);
         temp.setBounds(200, 200, 200, 200);
+        climate.setBounds(300, 300, 200, 200);
+        try{climate.setText("Outside Temp" + Integer.toString(weather.getTemp()));} catch (Exception e) {}
+        
         init();
 
         this.addMouseMotionListener(new MouseAdapter() {
