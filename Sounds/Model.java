@@ -36,7 +36,7 @@ public class Model {
         public void playBGM(){
       //Reference: http://stackoverflow.com/questions/10570537/java-no-sound-played-for-button
         try{
-            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("src\\music\\op.wav"));
+            AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("Sounds\\op.wav"));
             //R: http://opengameart.org/content/introduction-gm-version
             Clip clip = AudioSystem.getClip( );
             clip.open(audioInputStream);
@@ -53,7 +53,7 @@ public class Model {
         //http://opengameart.org/content/sound-effects-sfx028
         public void playLeftKey(){
           try{
-          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("src\\music\\arrow.wav"));
+          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("Sounds\\arrow.wav"));
           Clip clip = AudioSystem.getClip( );
             clip.open(audioInputStream);
             clip.start( );
@@ -65,7 +65,7 @@ public class Model {
         }
         public void playRightKey(){
           try{
-          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("src\\music\\arrow.wav"));
+          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("Sounds\\arrow.wav"));
           Clip clip = AudioSystem.getClip( );
             clip.open(audioInputStream);
             clip.start( );
@@ -78,7 +78,7 @@ public class Model {
         
         public void playUpKey(){
           try{
-          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("src\\music\\arrow.wav"));
+          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("Sounds\\arrow.wav"));
           Clip clip = AudioSystem.getClip( );
             clip.open(audioInputStream);
             clip.start( );
@@ -90,7 +90,7 @@ public class Model {
         }
         public void playDownKey(){
           try{
-          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("src\\music\\arrow.wav"));
+          AudioInputStream audioInputStream = AudioSystem.getAudioInputStream (new File("Sounds\\arrow.wav"));
           Clip clip = AudioSystem.getClip( );
             clip.open(audioInputStream);
             clip.start( );
