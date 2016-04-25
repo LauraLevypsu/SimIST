@@ -93,7 +93,7 @@ public class AuBonPainPanel extends JPanel {
         super.paintComponent(g);
         double playerHeight = getParent().getHeight() * .125;
         double playerWidth = getParent().getWidth() * .06;
-        g.drawImage(new ImageIcon("src/pic/floor.png").getImage(), 0, 0, getParent().getWidth(), getParent().getHeight(), null);
+        g.drawImage(new ImageIcon("pic/floor.png").getImage(), 0, 0, getParent().getWidth(), getParent().getHeight(), null);
         g.drawImage(new ImageIcon(characterMovement.getAnimation()).getImage(), student.x, student.y, (int) playerWidth, (int) playerHeight, null);
 
         refreshStations();

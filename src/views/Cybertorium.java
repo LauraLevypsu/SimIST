@@ -60,7 +60,7 @@ public class Cybertorium extends JPanel
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        ImageIcon Icon = new ImageIcon("src/pic/cybertorium.jpg");
+        ImageIcon Icon = new ImageIcon("pic/cybertorium.jpg");
         g.drawImage(Icon.getImage(), 0, 0, this);
         
     }
