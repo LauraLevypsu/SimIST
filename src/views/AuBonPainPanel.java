@@ -57,8 +57,8 @@ public class AuBonPainPanel extends JPanel {
         add(temp);
         add(climate);
         temp.setBounds(200, 200, 200, 200);
-        climate.setBounds(300, 300, 200, 200);
-        try{climate.setText("Outside Temp" + Integer.toString(weather.getTemp()));} catch (Exception e) {}
+        climate.setBounds(650, 20, 200, 200);
+        try{climate.setText("Outside Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
         
         init();
 
