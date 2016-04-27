@@ -17,6 +17,7 @@ import models.Customer;
 import models.MeetingRoomMovement;
 import java.awt.event.KeyListener;
 import sandbox.Weather;
+import controllers.BuildingHVAC;
 
 /**
  *
@@ -29,6 +30,8 @@ public class MeetingRoomPanel extends JPanel {
     public static final int PROJECTORWIDTH = 300;
     public static final int PROJECTORHEIGHT = 300;
     private Weather weather = new Weather();
+    private BuildingHVAC hvac;
+    private int outdoortemp;
     private Rectangle table;
     private Rectangle projector;
     private MeetingRoomMovement characterMovement;
@@ -58,9 +61,11 @@ public class MeetingRoomPanel extends JPanel {
         });
         this.setFocusable(true);
         
+        try{outdoortemp= weather.getTemp();}catch (Exception e) {}
+        hvac=new BuildingHVAC(outdoortemp);
         add(climate);
-        try{climate.setText("Outside \n Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
-        climate.setBounds(650, 350, 200, 200);
+        climate.setText("Outside \n Temp: " + Integer.toString(outdoortemp)+ " F \nInIndoor Temp: " + Double.toString(hvac.getCurrentIndoorTemp())+ " F");
+        climate.setBounds(500, 350, 260, 200);
         climate.getParent().revalidate();
     }
 

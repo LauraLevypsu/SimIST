@@ -9,6 +9,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyListener;
 import java.util.*;
 import sandbox.Weather;
+import controllers.BuildingHVAC;
 
 
 public class AuBonPainPanel extends JPanel {
@@ -43,22 +44,29 @@ public class AuBonPainPanel extends JPanel {
     private CharacterMovement characterMovement;
     private Customer student;
     private Weather weather = new Weather();
+    private BuildingHVAC hvac;
 
     private JLabel temp = new JLabel();
     private JLabel climate  = new JLabel();
+    private int outdoortemp;
 
     public AuBonPainPanel(Customer inf_Student, CharacterMovement inf_characterMovement) {
         super();
         student = inf_Student;
         characterMovement = inf_characterMovement;
+        
+        try{outdoortemp=weather.getTemp();}catch (Exception e) {}
+        hvac =new BuildingHVAC(outdoortemp);
 
         setPreferredSize(new Dimension(800, 600));
         setLayout(null);
         add(temp);
         add(climate);
         temp.setBounds(200, 200, 200, 200);
-        climate.setBounds(645, 20, 200, 200);
-        try{climate.setText("Outside Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
+        climate.setBounds(500, 20, 280, 200);
+        climate.setText("Outside Temp: " + Integer.toString(outdoortemp)+ " F \nInIndoor Temp: " + Double.toString(hvac.getCurrentIndoorTemp())+ " F");
+        
+        
         
         init();
 

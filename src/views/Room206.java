@@ -15,6 +15,7 @@ import models.Customer;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import sandbox.Weather;
+import controllers.BuildingHVAC;
 
 /**
  *
@@ -40,6 +41,8 @@ public class Room206 extends JPanel {
 
 
     private Weather weather = new Weather();
+    private BuildingHVAC hvac;
+    private int outdoortemp;
     private JLabel climate = new JLabel();
     private Rectangle shelf1;
     private Rectangle shelf2;
@@ -91,9 +94,10 @@ public class Room206 extends JPanel {
         });
         this.setFocusable(true);
         
+        try{outdoortemp=weather.getTemp();} catch (Exception e){}
         add(climate);
-        climate.setBounds(645, 20, 200, 200);
-        try{climate.setText("Outside Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
+        climate.setBounds(600, 20, 260, 200);
+        climate.setText("Outside Temp: " + Integer.toString(outdoortemp)+ " F \nInIndoor Temp: " + Double.toString(hvac.getCurrentIndoorTemp())+ " F");
     }
 
     private void init() {
