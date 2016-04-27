@@ -14,6 +14,7 @@ import models.CharacterMovement;
 import models.Customer;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import sandbox.Weather;
 
 /**
  *
@@ -38,7 +39,8 @@ public class Room206 extends JPanel {
     public static final int WallLRHeight = 600;
 
 
-
+    private Weather weather = new Weather();
+    private JLabel climate = new JLabel();
     private Rectangle shelf1;
     private Rectangle shelf2;
     private Rectangle longtable;
@@ -88,6 +90,10 @@ public class Room206 extends JPanel {
             }
         });
         this.setFocusable(true);
+        
+        add(climate);
+        climate.setBounds(645, 20, 200, 200);
+        try{climate.setText("Outside Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
     }
 
     private void init() {

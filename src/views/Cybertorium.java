@@ -5,7 +5,9 @@ import java.awt.Graphics;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import sandbox.Weather;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +21,8 @@ import javax.swing.JPanel;
  */
 public class Cybertorium extends JPanel
 {
+    private Weather weather = new Weather();
+    private JLabel climate  = new JLabel();
     JButton table1, table2, table3, table4, table5;
     
     public Cybertorium()
@@ -34,6 +38,10 @@ public class Cybertorium extends JPanel
         add(table3);
         add(table4);
         add(table5);
+        
+        add(climate);
+        climate.setBounds(200, 300, 200, 200);
+        try{climate.setText("Outside Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
         
         table1.setOpaque(false);
         table1.setContentAreaFilled(false);

@@ -16,6 +16,7 @@ import javax.swing.JPanel;
 import models.Customer;
 import models.MeetingRoomMovement;
 import java.awt.event.KeyListener;
+import sandbox.Weather;
 
 /**
  *
@@ -27,12 +28,12 @@ public class MeetingRoomPanel extends JPanel {
     public static final int TABLEHEIGHT = 58;
     public static final int PROJECTORWIDTH = 300;
     public static final int PROJECTORHEIGHT = 300;
-
+    private Weather weather = new Weather();
     private Rectangle table;
     private Rectangle projector;
     private MeetingRoomMovement characterMovement;
     private Customer student;
-
+    private JLabel climate = new JLabel();
     private JLabel temp = new JLabel();
 
     public MeetingRoomPanel(Customer inf_Student, MeetingRoomMovement inf_charMovement) {
@@ -56,6 +57,11 @@ public class MeetingRoomPanel extends JPanel {
             }
         });
         this.setFocusable(true);
+        
+        add(climate);
+        try{climate.setText("Outside \n Temp: " + Integer.toString(weather.getTemp())+ " F");} catch (Exception e) {}
+        climate.setBounds(650, 350, 200, 200);
+        climate.getParent().revalidate();
     }
 
     private void init() {
